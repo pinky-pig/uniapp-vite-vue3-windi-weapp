@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [ "src/*" ],
+    },
+    "types": [
+      "@dcloudio/types",
+      "weixin-app",              //wx-app的TypeScript定义  新添加
+      "miniprogram-api-typings", //微信小程序api的typescript类型定义文件，和weixin-app同；可选
+      "node",
+    ],
+
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/typings/**/*.d.ts",
+  ],
+  "exclude": [ "/dist/**", "node_modules" ],
+}
