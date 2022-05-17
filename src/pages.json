@@ -7,19 +7,19 @@
         "navigationStyle": "custom"
 			}
 		},
-		{
-			"path": "pages/my/person-edit/index",
-			"style": {
-				"navigationBarTitleText": "个人信息",
-			}
-		},
     {
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+    {
+			"path": "pages/map/index",
+			"style": {
+				"navigationBarTitleText": "custom",
+        "navigationStyle": "custom"
+			}
 		}
-
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -65,6 +65,12 @@
         "iconPath": "static/images/toolbar-home.png",
         "selectedIconPath": "static/images/toolbar-home-on.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/map/index",
+        "iconPath": "static/images/toolbar-home.png",
+        "selectedIconPath": "static/images/toolbar-home-on.png",
+        "text": "地图"
       },
       {
         "pagePath": "pages/my/index",

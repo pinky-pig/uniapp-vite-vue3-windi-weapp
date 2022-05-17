@@ -21,13 +21,13 @@
 import { ref,reactive } from 'vue';
 let isLogin = ref(false)
 
-type userType = {
+type UserType = {
   avatarUrl:string,
   nickName:string,
   memberLevelVO:string,
   userMobile:string,
 }
-let userInfo = ref<userType>({
+let userInfo = ref<UserType>({
   avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ8SiagBMUuLZ7USibVCmnJBvy87ib8gT8gl1wrCwwZRVDsv9a6t4lbGLHcoiacKDxjvgw0v374xE3UkQ/132',
   nickName: 'Man',
   memberLevelVO: 'Lv1',
