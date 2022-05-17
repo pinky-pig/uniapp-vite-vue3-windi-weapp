@@ -54,7 +54,6 @@ const list = reactive([
   },
 ])
 
-debugger
 uni.request({
   url: 'http://httpbin.org/get', //仅为示例，并非真实接口地址。
   data: {
