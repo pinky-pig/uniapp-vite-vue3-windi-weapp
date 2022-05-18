@@ -9,7 +9,7 @@ const markers: Array<MarkerType> = [{
   id: 1,
   latitude: 23.098994,
   longitude: 113.322520,
-  iconPath: '../../../static/images/map/marker.png',
+  iconPath: '../../../../static/images/map/marker.png',
   callout: {
     content: '文本内容',
     color: '#ff0000',

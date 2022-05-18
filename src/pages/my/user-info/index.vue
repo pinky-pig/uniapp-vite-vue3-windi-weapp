@@ -1,7 +1,7 @@
 <template>
   <view :class="$style.container">
     <!-- 未登录的情况 -->
-    <block v-if="isLogin">
+    <block v-if="!isLogin" @touchstart="onLogin">
       <view class="user-center-card__header">
         <img :src="userInfo.avatarUrl" class="user-center-card__header__avatar" />
         <view class="user-center-card__header__name">{{'请登录'}}</view>
@@ -19,21 +19,15 @@
 
 <script setup lang="ts">
 import { ref,reactive } from 'vue';
-let isLogin = ref(false)
+import { getUserInfo } from '@/mock/userCenter'
+let isLogin = ref(true)
+let {userInfo} = getUserInfo()
 
-type UserType = {
-  avatarUrl:string,
-  nickName:string,
-  memberLevelVO:string,
-  userMobile:string,
+// 登录
+const onLogin = () => {
+
 }
-let userInfo = ref<UserType>({
-  avatarUrl: 'https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJ8SiagBMUuLZ7USibVCmnJBvy87ib8gT8gl1wrCwwZRVDsv9a6t4lbGLHcoiacKDxjvgw0v374xE3UkQ/132',
-  nickName: 'Man',
-  memberLevelVO: 'Lv1',
-  userMobile: '1382550699x',
-})
-
+// 跳转修改个人信息
 const toPage = (path:any) => {
   uni.navigateTo({
     url: '/pages/my/person-edit/index',

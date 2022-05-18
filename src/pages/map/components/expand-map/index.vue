@@ -17,6 +17,7 @@
       :latitude="latitude"
       :longitude="longitude"
       :markers="markers"
+      :polyline="polyline"
       :subkey="MAPSUBKEY_WHITE"
       @markertap="onMarkerTap"
       @callouttap="onCalloutTap"
@@ -39,6 +40,29 @@ const onReturn = () => {
 const latitude = ref<number>(23.099994)
 const longitude = ref<number>(113.324520)
 const {markers} = getMarkers()
+
+const polyline = [{
+  points: [
+    {
+      id: 1,
+      latitude: 23.098994,
+      longitude: 113.322520,
+      iconPath: '../../../../static/images/map/marker.png',
+    },
+    {
+      id: 2,
+      latitude: 23.099994,
+      longitude: 113.322520,
+      iconPath: '../../../../static/images/map/marker.png',
+    },
+  ],//是一个数组形式的坐标点[{lat,log}]
+  // color:"#AEFA24",//线条的颜色
+  color:"#68B887",//线条的颜色
+  width: 6,//宽度
+  // borderColor:'#AEFA2490',
+  // arrowLine: true,//是否带箭头
+  borderWidth:0//线的边框宽度，还有很多参数，请看文档
+}]
 
 let mapCtx:any = null
 onMounted(() => { mapCtx = wx.createMapContext('mapId') })

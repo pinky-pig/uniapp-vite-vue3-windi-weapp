@@ -19,6 +19,9 @@
 .icon-arrow-left:before {
   content: "\e64c";
 }
+.icon-arrow-right:before {
+  content: "\e64e";
+}
 
 .icon-setting-fill:before {
   content: "\e644";
