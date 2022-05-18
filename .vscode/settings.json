@@ -47,7 +47,7 @@
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[vue]": {
-		"editor.defaultFormatter": "johnsoncodehk.volar"
+		"editor.defaultFormatter": "Vue.volar"
 	},
 	"terminal.integrated.tabs.enabled": true,
 	"[typescriptreact]": {

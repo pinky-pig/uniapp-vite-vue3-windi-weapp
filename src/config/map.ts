@@ -1,0 +1,5 @@
+/** 白色地图样式 */
+export const MAPSUBKEY_WHITE = 'IATBZ-YAFKD-ECU46-HSYAI-Q43XS-BJFBB'
+
+/** 黑色地图样式 */
+export const MAPSUBKEY_BLACK = 'IATBZ-YAFKD-ECU46-HSYAI-Q43XS-BJFBB'
