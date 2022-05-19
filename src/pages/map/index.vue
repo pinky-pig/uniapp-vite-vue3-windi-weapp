@@ -1,30 +1,32 @@
 <template>
   <view class=" text-3xl font-bold absolute left-6 top-10">Todo</view>
-  <view class="content flex-center flex-col">
-    <view :class="$style['map-card']">
-      <view :class="$style.mapContainer">
-        <map
-          id="mapPage1"
-          class="map"
-          style="width: 100%;height: 100%;"
-          :latitude="latitude"
-          :longitude="longitude"
-          :subkey="MAPSUBKEY_WHITE"
-        ></map>
+  <scroll-view scroll-y="true" style="height: 500px;margin-top: 90px;">
+    <view class="content flex-center flex-col">
+      <view :class="$style['map-card']">
+        <view :class="$style.mapContainer">
+          <map
+            id="mapPage1"
+            class="map"
+            style="width: 100%;height: 100%;"
+            :latitude="latitude"
+            :longitude="longitude"
+            :subkey="MAPSUBKEY_WHITE"
+          ></map>
           <!-- @tap="onMapTap" -->
-      </view>
-      <view :class="$style.contentContainer" class=" flex-1 flex-col justify-between">
-        <view :class="$style.top" @touchstart="goWebView"></view>
-        <view :class="$style.btm" @touchstart="onMapTap">
-          在地图上查看
-          <text class="iconfont icon-arrow-right"></text>
+        </view>
+        <view :class="$style.contentContainer" class=" flex-1 flex-col justify-between">
+          <view :class="$style.top" @touchstart="goWebView"></view>
+          <view :class="$style.btm" @touchstart="onMapTap">
+            在地图上查看
+            <text class="iconfont icon-arrow-right"></text>
+          </view>
         </view>
       </view>
+      <view :class="$style['list-card']">
+        <todo-list></todo-list>
+      </view>
     </view>
-    <view :class="$style['list-card']">
-      <todo-list></todo-list>
-    </view>
-  </view>
+  </scroll-view>
 </template>
 
 <script setup lang="ts">
@@ -51,10 +53,9 @@ const goWebView = () => {
 
 <style lang='less' module>
 .map-card{
-  position: absolute;
   width: 93%;
   height: 150px;
-  top: 100px;
+  margin-top: 30px;
   background: #FFFFFF;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
   border-radius: 32px;
@@ -111,5 +112,6 @@ const goWebView = () => {
 .list-card{
   width: 93%;
   height: 400px;
+  margin-top: 30px;
 }
 </style>

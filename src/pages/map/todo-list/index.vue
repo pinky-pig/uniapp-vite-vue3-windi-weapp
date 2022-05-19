@@ -18,7 +18,6 @@
 <style lang="less" module>
   .container {
     position: absolute;
-    top: 290px;
     width: 93%;
     .title{
       width: 97px;
