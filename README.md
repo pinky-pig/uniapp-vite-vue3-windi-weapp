@@ -63,3 +63,7 @@ npm run dev:mp-weixin
 * */tsconfig* : ts配置
 * */vite.config.ts* : vite配置
 * */windi.config.ts* : WindiCSS配置
+
+## 功能两点😁
+1. 操作抽屉面板（仿高德地图） -- 计算touch位置
+2. 自定义上拉刷新，增加帧动画 -- 计算滚动条位置，模拟下拉刷新

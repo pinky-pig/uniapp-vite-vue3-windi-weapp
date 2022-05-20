@@ -88,11 +88,13 @@ wx.request({
   width: 100%;
   height: 250rpx;
   margin-bottom: 24rpx;
-  background-color: #ffffff;
+  // background-color: #ffffff;
   border-radius: 16rpx 16rpx 0 0;
   padding: 24rpx 18rpx 24rpx 32rpx;
   box-sizing: border-box;
   font-size: 32rpx;
+  background: rgba(240, 240, 240, 0.6);
+  backdrop-filter: blur(10px);
 }
 .title{
   display: flex;

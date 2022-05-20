@@ -1,32 +1,40 @@
 <template>
-  <view class=" text-3xl font-bold absolute left-6 top-10">Todo</view>
-  <scroll-view scroll-y="true" style="height: 500px;margin-top: 90px;">
-    <view class="content flex-center flex-col">
-      <view :class="$style['map-card']">
-        <view :class="$style.mapContainer">
-          <map
-            id="mapPage1"
-            class="map"
-            style="width: 100%;height: 100%;"
-            :latitude="latitude"
-            :longitude="longitude"
-            :subkey="MAPSUBKEY_WHITE"
-          ></map>
-          <!-- @tap="onMapTap" -->
-        </view>
-        <view :class="$style.contentContainer" class=" flex-1 flex-col justify-between">
-          <view :class="$style.top" @touchstart="goWebView"></view>
-          <view :class="$style.btm" @touchstart="onMapTap">
-            在地图上查看
-            <text class="iconfont icon-arrow-right"></text>
+  <view class=" overflow-hidden">
+    <view class=" text-3xl font-bold absolute left-6 top-10">Todo</view>
+    <scroll-view
+      scroll-y="true"
+      style="height: calc(95vh - 80px);margin-top: 90px;"
+      >
+
+      <view class="content flex-center flex-col">
+        <view :class="$style['map-card']">
+          <view :class="$style.mapContainer">
+            <map
+              id="mapPage1"
+              class="map"
+              style="width: 100%;height: 100%;"
+              :latitude="latitude"
+              :longitude="longitude"
+              :subkey="MAPSUBKEY_WHITE"
+            ></map>
+          </view>
+          <view :class="$style.contentContainer" class=" flex-1 flex-col justify-between">
+            <view :class="$style.top" @touchstart="goWebView"></view>
+            <view :class="$style.btm" @touchstart="onMapTap">
+              在地图上查看
+              <text class="iconfont icon-arrow-right"></text>
+            </view>
           </view>
         </view>
+        <view :class="$style['list-card']">
+          <todo-list></todo-list>
+        </view>
       </view>
-      <view :class="$style['list-card']">
-        <todo-list></todo-list>
+      <view class="w-full h-96 bg-purple-200">
+
       </view>
-    </view>
-  </scroll-view>
+    </scroll-view>
+  </view>
 </template>
 
 <script setup lang="ts">
@@ -49,6 +57,10 @@ const goWebView = () => {
     url: '/pages/map/webview-map/index',
   })
 }
+
+
+// 下拉刷新
+let isOpenRefresh = ref(true)
 </script>
 
 <style lang='less' module>

@@ -37,22 +37,47 @@ const onReturn = () => {
     url: '/pages/map/index',
   })
 }
-const latitude = ref<number>(23.099994)
-const longitude = ref<number>(113.324520)
-const {markers} = getMarkers()
 
+/**
+ * 开通微信定位功能，需要再manifest中开通
+ * 并且再微信小程序中申请权限
+ * "permission": {
+      "scope.userLocation": {
+        "desc": "小程序将使用定位功能"
+      }
+    }
+ */
+const latitude = ref<number>(0)
+const longitude = ref<number>(0)
+wx.authorize({
+  scope: 'scope.userLocation',
+  success: function (res) {
+    wx.getLocation({
+      type: 'wgs84',
+      success (res) {
+        latitude.value = res.latitude
+        longitude.value = res.longitude
+      }
+    })
+  },
+  fail: function (data) {
+    console.log(data);
+  }
+})
+
+const {markers} = getMarkers()
 const polyline = [{
   points: [
     {
       id: 1,
-      latitude: 23.098994,
-      longitude: 113.322520,
+      latitude: 36.8131,
+      longitude: 118.0548,
       iconPath: '../../../../static/images/map/marker.png',
     },
     {
       id: 2,
-      latitude: 23.099994,
-      longitude: 113.322520,
+      latitude: 36.8231,
+      longitude: 118.0548,
       iconPath: '../../../../static/images/map/marker.png',
     },
   ],//是一个数组形式的坐标点[{lat,log}]

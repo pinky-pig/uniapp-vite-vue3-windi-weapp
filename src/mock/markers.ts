@@ -7,8 +7,8 @@ type MarkerType = {
 }
 const markers: Array<MarkerType> = [{
   id: 1,
-  latitude: 23.098994,
-  longitude: 113.322520,
+  latitude: 36.8131,
+  longitude: 118.0548,
   iconPath: '../../../../static/images/map/marker.png',
   callout: {
     content: '文本内容',
