@@ -1,3 +1,12 @@
+<template>
+  <view
+    :class="$style.bottom"
+    @touchstart.stop="onTouchStart"
+    @touchmove.stop="onTouchMove"
+    @touchend.stop="onTouchEnd">
+    <view :class="$style.bottomLine"></view>
+  </view>
+</template>
 <script setup lang="ts">
 /**
  * css v-bind变量 bottomHeight
@@ -50,16 +59,6 @@
     // 防止特殊情况，这里应该跟move中一致，并添加transition
   }
 </script>
-
-<template>
-  <view
-    :class="$style.bottom"
-    @touchstart.stop="onTouchStart"
-    @touchmove.stop="onTouchMove"
-    @touchend.stop="onTouchEnd">
-    <view :class="$style.bottomLine"></view>
-  </view>
-</template>
 
 <style lang='less' module>
 .bottom{

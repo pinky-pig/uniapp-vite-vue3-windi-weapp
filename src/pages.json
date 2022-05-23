@@ -1,13 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
-    // 我的
+
+    // 聊天页面
     {
-			"path": "pages/my/index",
+			"path": "pages/chat/index",
 			"style": {
-				"navigationBarTitleText": "Profile",
-        // "navigationStyle": "custom"
+				"navigationBarTitleText": "chat"
 			}
 		},
+
     // 首页
     {
 			"path": "pages/index/index",
@@ -37,13 +38,22 @@
 			}
 		},
 
-
+    // 我的
+    {
+			"path": "pages/my/index",
+			"style": {
+				"navigationBarTitleText": "Profile",
+        // "navigationStyle": "custom"
+			}
+		},
     {
 			"path": "pages/my/person-edit/index",
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
 		},
+
+
 
 
 
@@ -105,7 +115,13 @@
         "iconPath": "static/images/toolbar/me.png",
         "selectedIconPath": "static/images/toolbar/me-on.png",
         "text": "我的"
-      }
+      },
+      {
+        "pagePath": "pages/chat/index",
+        "iconPath": "static/images/toolbar/me.png",
+        "selectedIconPath": "static/images/toolbar/me-on.png",
+        "text": "聊天"
+      },
     ]
   }
 }

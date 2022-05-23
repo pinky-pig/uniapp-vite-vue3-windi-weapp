@@ -3,10 +3,13 @@
     <block v-if="auth.isLogin">
       <!-- 已登录 -->
       <view class="w-16 h-16 rounded-full object-cover" style="border: 2px solid #95ADFE; padding: 3px;">
-        <img class="w-16 h-16 rounded-full object-cover" :src="auth.userInfo.avatarUrl"  />
+        <img @tap="onAvatar" class="w-16 h-16 rounded-full object-cover" :src="auth.userInfo.avatarUrl"  />
       </view>
-      <view style="font-style: normal;font-weight: 700; font-size: 16px;line-height: 30px;">Monica Gamage</view>
-      <view style="font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #7B6F72;">Lose a fat program</view>
+      <view style="font-style: normal;font-weight: 700; font-size: 16px;line-height: 30px;">{{auth.userInfo.nickName}}</view>
+      <!-- <view style="font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #7B6F72;">Lose a fat program</view> -->
+      <view style="font-style: normal; font-weight: 400; font-size: 12px; line-height: 18px; color: #7B6F72;">
+        <input class="uni-input" style="text-align: center;" placeholder="Lose a fat program" />
+      </view>
       <van-button class="v-btn" @tap="onLogout" color="linear-gradient(to right,#92A3FD,#9DCEFF)" round >logout</van-button>
     </block>
 
@@ -59,6 +62,25 @@ const onLogout = () => {
         console.log('用户点击取消')
       }
     }
+  })
+}
+const onAvatar = (e:any) => {
+  // 拍摄或者从相册选取
+  // wx.chooseMedia({
+  //   count: 9,
+  //   mediaType: ['image','video'],
+  //   sourceType: ['album', 'camera'],
+  //   maxDuration: 30,
+  //   camera: 'back',
+  //   success(res:any) {
+  //     console.log(res.tempFiles.tempFilePath)
+  //     console.log(res.tempFiles.size)
+  //   }
+  // })
+  // 预览图片
+  wx.previewImage({
+    current: '', // 当前显示图片的 http 链接
+    urls: [auth.userInfo.avatarUrl] // 需要预览的图片 http 链接列表
   })
 }
 // 跳转修改个人信息

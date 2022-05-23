@@ -1,10 +1,10 @@
 <template>
   <view :class="$style.container">
-    <view class="font-bold mb-4">夜间模式</view>
+    <view class="font-bold mb-4">主题设置</view>
     <view v-for="(item,index) in 1" :key="index">
       <uu-cell>
         <template #title>
-          夜间模式
+          {{ title }}
         </template>
         <template #rightIcon>
           <switch  color="#95ADFE" style="transform: scale(0.8,0.8);"  @change="onSwitch" />
@@ -15,9 +15,18 @@
 </template>
 <script setup lang="ts">
 import uuCell from '@/component/common/uu-cell.vue';
+import { ref } from 'vue';
 
+const title = ref<string>('夜间模式')
 const onSwitch = (e:any) => {
-  console.log(e)
+  if (e.detail.value) {
+    // 选中
+    title.value = '白天模式'
+  }else{
+    // 取消选中
+    title.value = '夜间模式'
+  }
+
 }
 </script>
 <style lang="less" module>

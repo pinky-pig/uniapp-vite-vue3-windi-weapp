@@ -1,9 +1,11 @@
 <template>
   <view class=" overflow-hidden">
-    <view class=" text-3xl font-bold absolute left-6 top-10">Todo</view>
+    <view :class="$style.title">
+      <view class=" text-3xl font-bold ">Todo</view>
+    </view>
     <scroll-view
       scroll-y="true"
-      style="height: calc(95vh - 80px);margin-top: 90px;"
+      style="height: calc(95vh - 80px);"
       >
 
       <view class="content flex-center flex-col">
@@ -64,12 +66,22 @@ let isOpenRefresh = ref(true)
 </script>
 
 <style lang='less' module>
+.title{
+  width: 100%;
+  height: 60px;
+  padding-left: 24px;
+  padding-top: 40px;
+  background: rgba(250, 250, 250, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
 .map-card{
   width: 93%;
   height: 150px;
   margin-top: 30px;
   background: #FFFFFF;
   box-shadow: 0 0 0 1px rgb(0 0 0 / 5%), 0 0 30px 1px rgb(0 0 0 / 15%);
+  // box-shadow: 1px 7px 22px rgba(32, 32, 32, 0.11);
   border-radius: 32px;
   overflow: hidden;
   transform: translateY(0); /* ios map 圆角 不生效解决方案 */
