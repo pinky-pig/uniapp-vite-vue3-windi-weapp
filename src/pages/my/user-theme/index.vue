@@ -1,10 +1,13 @@
 <template>
   <view :class="$style.container">
-    <view class="font-bold mb-4">账户设置</view>
-    <view v-for="(item,index) in list" :key="index">
+    <view class="font-bold mb-4">夜间模式</view>
+    <view v-for="(item,index) in 1" :key="index">
       <uu-cell>
         <template #title>
-          {{item.key}}
+          夜间模式
+        </template>
+        <template #rightIcon>
+          <switch  color="#95ADFE" style="transform: scale(0.8,0.8);"  @change="onSwitch" />
         </template>
       </uu-cell>
     </view>
@@ -12,21 +15,10 @@
 </template>
 <script setup lang="ts">
 import uuCell from '@/component/common/uu-cell.vue';
-import { reactive } from 'vue';
-const list = reactive([
-  {
-    key:'地址管理',
-    value:'',
-  },
-  {
-    key:'我的收藏',
-    value:'',
-  },
-  {
-    key:'消息通知',
-    value:'',
-  },
-])
+
+const onSwitch = (e:any) => {
+  console.log(e)
+}
 </script>
 <style lang="less" module>
   .container {

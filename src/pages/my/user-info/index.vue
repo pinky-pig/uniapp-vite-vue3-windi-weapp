@@ -1,5 +1,5 @@
 <template>
-  <view :class="$style.container" class=" bg-gray-200 w-full py-5 flex flex-col justify-center items-center" >
+  <view :class="$style.container" class=" w-full py-5 flex flex-col justify-center items-center" >
     <block v-if="auth.isLogin">
       <!-- 已登录 -->
       <view class="w-16 h-16 rounded-full object-cover" style="border: 2px solid #95ADFE; padding: 3px;">

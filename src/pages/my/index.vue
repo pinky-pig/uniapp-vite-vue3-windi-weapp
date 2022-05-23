@@ -2,19 +2,18 @@
   <view :class="$style.container">
     <user-info></user-info>
     <view :class="$style.pageBottom">
-      <!-- <order-group></order-group>
-      <other-tools></other-tools> -->
-      <user-setting></user-setting>
+      <user-tag class=" mb-6"></user-tag>
+      <user-setting class=" mb-6"></user-setting>
+      <user-theme class=" mb-6"></user-theme>
     </view>
   </view>
 </template>
 
 <script setup lang="ts">
 import userInfo from "./user-info/index.vue"
+import userTag from "./user-tag/index.vue"
 import userSetting from "./user-setting/index.vue"
-import orderGroup from "./order-group/index.vue"
-import otherTools from "./other-tools/index.vue"
-import OtherTools from "./other-tools/index.vue";
+import userTheme from "./user-theme/index.vue"
 
 </script>
 
@@ -29,6 +28,8 @@ import OtherTools from "./other-tools/index.vue";
   // padding: 0 10px;
 
   .pageBottom{
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
     border-radius: 10px;
