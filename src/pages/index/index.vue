@@ -11,12 +11,14 @@
       </view>
     </view>
     <view class=" bg-pink-100 h-96 w-full"></view>
+    <demo></demo>
+    <text>789</text>
 
   </uuScrollView>
 </template>
 
 <script setup lang="ts">
-import { computed, nextTick, reactive, ref } from 'vue'
+import { computed, defineComponent, h, nextTick, reactive, ref } from 'vue'
 import imgUrl from '../../static/logo.png'
 import uuScrollView from "@/component/common/uu-scroll-view.vue"
 import { useToolsStore } from '@/store/tools'

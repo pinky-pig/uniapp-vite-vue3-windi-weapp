@@ -33,19 +33,23 @@
 		<!-- 附件 -->
 		<view v-show="showFile" >
 			<view class="bottom-panel" >
-				<view class="box-item" v-for="(item, index) in 8" :key="index">
+				<view class="box-item" v-for="(item, index) in fileList" :key="index">
 					<view class="icon">
-						<text style="width: 28px;height: 28px;" class="iconfont icon-uninterested"></text>
+						<img style="width: 60rpx;height: 60rpx;" :src="item.icon" alt="">
 					</view>
-					<text class="label">照片</text>
+					<text class="label">{{item.label}}</text>
 				</view>
 			</view>
 		</view>
 
   </view>
 </template>
-<script setup lang="ts">import { ref } from 'vue';
-
+<script setup lang="ts">import { reactive, ref } from 'vue';
+import image from '@/static/images/chat/image.svg';
+import camera from '@/static/images/chat/camera.svg';
+import videoCamera from '@/static/images/chat/video-camera.svg';
+import location from '@/static/images/chat/location.svg';
+import file from '@/static/images/chat/file.svg';
 /**
  * 上面scroll-view，下面输入框
  * 输入框上移，其实是scroll-view的高度减少
@@ -79,20 +83,45 @@ const showEmoji = ref(false)
 const toggleEmoji = () => {
 	showFile.value = false
 	showEmoji.value = true
-	maxScrollHeight.value = 136
-
+	maxScrollHeight.value = 200
 }
 
 /**
- * emoji
+ * 附件
  */
 const showFile = ref(false)
 const toggleFile = () => {
 	showEmoji.value = false
 	showFile.value = true
-	maxScrollHeight.value = 136
-
+	maxScrollHeight.value = 200
 }
+const fileList = reactive([
+	{
+		id:'1',
+		icon: image,
+		label:'图片'
+	},
+	{
+		id:'2',
+		icon: camera,
+		label:'拍摄'
+	},
+	{
+		id:'3',
+		icon: videoCamera,
+		label:'视频通话'
+	},
+	{
+		id:'4',
+		icon: location,
+		label:'位置'
+	},
+	{
+		id:'5',
+		icon: file,
+		label:'文件'
+	},
+])
 </script>
 <style lang="less" module>
   .container {
@@ -136,11 +165,14 @@ const toggleFile = () => {
 
 .bottom-panel{
 	width: 100%;
-	height: 136px;
-	background: rgb(151, 151, 221);
-	display: grid;
-	grid-template-columns: repeat(4,25%);
-	grid-template-rows: repeat(2,autofill);
+	height: 200px;
+	background: #F7F7F7;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	// display: grid;
+	// grid-template-columns: repeat(4,25%);
+	// grid-template-rows: repeat(2,autofill);
 }
 // 附件子项
 .box-item{
@@ -148,17 +180,24 @@ const toggleFile = () => {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
-	height: 100%;
+	width: 25%;
 	font-size: 10px;
 	.icon{
-		width: 28px;
-		height: 28px;
-		background: #717171;
-		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 24rpx;
+		background: #ffffff;
+		border-radius: 24rpx;
+		text-align: center;
+		font-size: 48rpx;
+		margin-bottom: 5px;
 	}
 	.label{
-
+		font-size: 24rpx;
+		font-weight: 400;
+		color: rgba(39,40,50,0.5);
+		line-height: 34rpx;
 	}
 }
 
