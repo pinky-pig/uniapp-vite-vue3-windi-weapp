@@ -2,9 +2,9 @@
   <view :class="$style.container">
     <!--内容-->
 		<view @touchstart="togglePanel" class="UpView flex-1"  >
-			<scroll-view scroll-y style="height: 100%;">
-				<view v-for="(item, index) in 3" :key="index">
-            6666
+			<scroll-view scroll-y style="height: 100%;" :style="{maxHeight: `calc(100vh - 110rpx - ${maxScrollHeight}px)`}" >
+				<view v-for="(item, index) in 8" :key="index" >
+					<view class=" w-full h-20 bg-light-100 " style="border-bottom: 1px solid black;"></view>
 				</view>
 			</scroll-view>
 		</view>
@@ -22,13 +22,24 @@
 		</view>
 
 		<!-- emoji -->
-		<view v-if="showEmoji" class="emoji bg-purple-200 h-20 w-full flex flex-col">
-
+		<view v-show="showEmoji">
+			<view class="bottom-panel" >
+				<view class="box-item" v-for="(item, index) in 8" :key="index">
+					<text >😀</text>
+				</view>
+			</view>
 		</view>
 
 		<!-- 附件 -->
-		<view v-show="showFile" class=" bg-blue-300 h-34 w-full flex flex-col">
-
+		<view v-show="showFile" >
+			<view class="bottom-panel" >
+				<view class="box-item" v-for="(item, index) in 8" :key="index">
+					<view class="icon">
+						<text style="width: 28px;height: 28px;" class="iconfont icon-uninterested"></text>
+					</view>
+					<text class="label">照片</text>
+				</view>
+			</view>
 		</view>
 
   </view>
@@ -38,8 +49,13 @@
 /**
  * 上面scroll-view，下面输入框
  * 输入框上移，其实是scroll-view的高度减少
+ * 布局用的是flex column scroll-view自动填充 flex-grow: 1
+ * scroll-view有个最大高度，最大高度也是有两个值
+ * 下面的固定，控制显示与否，最大高度也是两个变化
+ *
  */
 const height = ref<number>(0)
+const maxScrollHeight = ref<number>(0)
 const toggleUp = () => {
   height.value = 100
 }
@@ -53,6 +69,7 @@ const toggleDown = () => {
 const togglePanel = () => {
 	showFile.value = false
 	showEmoji.value = false
+	maxScrollHeight.value = 0
 }
 
 /**
@@ -62,6 +79,8 @@ const showEmoji = ref(false)
 const toggleEmoji = () => {
 	showFile.value = false
 	showEmoji.value = true
+	maxScrollHeight.value = 136
+
 }
 
 /**
@@ -71,6 +90,8 @@ const showFile = ref(false)
 const toggleFile = () => {
 	showEmoji.value = false
 	showFile.value = true
+	maxScrollHeight.value = 136
+
 }
 </script>
 <style lang="less" module>
@@ -85,7 +106,6 @@ const toggleFile = () => {
 // #9BEA6B  #E5E5E5  #717171
 .UpView{
   background: rgb(220, 211, 211);
-	// transition: all ease-out 2s;
 }
 .DownView{
 	height: 110upx;
@@ -113,8 +133,33 @@ const toggleFile = () => {
 		height: 60upx;
 	}
 }
-.emoji{
-	transition: all 2s ease-out;
+
+.bottom-panel{
+	width: 100%;
+	height: 136px;
+	background: rgb(151, 151, 221);
+	display: grid;
+	grid-template-columns: repeat(4,25%);
+	grid-template-rows: repeat(2,autofill);
+}
+// 附件子项
+.box-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-size: 10px;
+	.icon{
+		width: 28px;
+		height: 28px;
+		background: #717171;
+		border-radius: 10px;
+	}
+	.label{
+
+	}
 }
 
 </style>
