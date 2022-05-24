@@ -33,8 +33,10 @@ import { MAPSUBKEY_WHITE } from '@/config'
 import { getMarkers } from '@/mock/markers'
 import operatePanel from "../operate-panel/index.vue";
 const onReturn = () => {
-  uni.switchTab({
-    url: '/pages/map/index',
+  // uni.switchTab({
+  //   url: '/pages/map/index',
+  // })
+  uni.navigateBack({
   })
 }
 
