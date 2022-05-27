@@ -1,5 +1,12 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页
+    // list首页
+    {
+			"path": "pages/list/index",
+			"style": {
+				"navigationBarTitleText": "list"
+			}
+		},
 
     // 聊天页面
     {
@@ -99,11 +106,17 @@
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/list/index",
         "iconPath": "static/images/toolbar/home.png",
         "selectedIconPath": "static/images/toolbar/home-on.png",
-        "text": "首页"
+        "text": "home"
       },
+      // {
+      //   "pagePath": "pages/index/index",
+      //   "iconPath": "static/images/toolbar/home.png",
+      //   "selectedIconPath": "static/images/toolbar/home-on.png",
+      //   "text": "首页"
+      // },
       {
         "pagePath": "pages/map/index",
         "iconPath": "static/images/toolbar/home.png",

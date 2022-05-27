@@ -2,7 +2,6 @@
 	"editor.quickSuggestions": {
 		"strings": true
 	},
-	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorTheme": "Default Dark+",
 	"editor.tabSize": 2,
 	"editor.fontLigatures": true,
@@ -72,5 +71,10 @@
 		"business": "core",
 		"request": "api",
 		"adapter": "middleware"
-	}
+	},
+	"cSpell.words": [
+		"dcloudio",
+		"miniprogram",
+		"weixin"
+	]
 }
