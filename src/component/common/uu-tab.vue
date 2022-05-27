@@ -88,7 +88,7 @@ const onTapItem = (item: object, index: number) => {
     margin-right: 8px;
     border-radius: 30px;
     height: 100%;
-    border: 1px solid #9dceff;
+    // border: 1px solid #9dceff;
     display: flex;
     justify-content: center;
     align-items: center;

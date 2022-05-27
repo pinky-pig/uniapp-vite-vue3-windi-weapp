@@ -97,6 +97,7 @@
       "van-loading": "wxcomponents/@vant/weapp/loading/index",
       "van-icon": "wxcomponents/@vant/weapp/icon/index",
       "van-search": "wxcomponents/@vant/weapp/search/index",
+      "van-calendar": "wxcomponents/@vant/weapp/calendar/index",
     }
 	},
 	"tabBar": {

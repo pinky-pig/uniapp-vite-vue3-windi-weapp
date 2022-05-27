@@ -32,9 +32,7 @@
           <todo-list></todo-list>
         </view>
       </view>
-      <view class="w-full h-96 bg-purple-200">
 
-      </view>
     </scroll-view>
   </view>
 </template>

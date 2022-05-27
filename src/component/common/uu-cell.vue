@@ -1,7 +1,9 @@
 <template>
   <view class="container">
-    <view class="left-icon">
-      <text class="iconfont icon-uninterested text-blue-500" ></text>
+    <view class="left-icon" name="leftIcon">
+      <slot name="leftIcon" >
+        <text class="iconfont icon-uninterested text-blue-500" ></text>
+      </slot>
     </view>
 
     <view class="title">
@@ -15,6 +17,15 @@
 </template>
 <script setup lang="ts">
 
+
+interface Props {
+  /** tab */
+  height: string
+}
+const props = withDefaults(defineProps<Props>(), {
+  height:'60px'
+})
+
 </script>
 <style lang="less" scoped>
 
@@ -22,14 +33,13 @@
   // border-bottom: 1px solid black;
   display: flex;
   align-items: center;
-  flex: 1;
-  height: 20px;
+  // flex: 1;
+  height: v-bind(height);
   width: 100%;
-  padding: 15px 0;
   .left-icon {
     font-weight: bold;
     flex: auto 1 auto;
-    width: 32rpx;
+    // width: 32rpx;
     // height: 32rpx;
     font-size: 38rpx;
     margin-right: 10px;

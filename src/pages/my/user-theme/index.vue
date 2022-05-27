@@ -1,13 +1,13 @@
 <template>
   <view :class="$style.container">
     <view class="font-bold mb-4">主题设置</view>
-    <view v-for="(item,index) in 1" :key="index">
+    <view v-for="(item,index) in list" :key="index">
       <uu-cell>
         <template #title>
-          {{ title }}
+          {{ item.label }}
         </template>
         <template #rightIcon>
-          <switch  color="#95ADFE" style="transform: scale(0.8,0.8);"  @change="onSwitch" />
+          <switch  color="#95ADFE" style="transform: scale(0.8,0.8);"  @change="event=>onSwitch(event,item)" />
         </template>
       </uu-cell>
     </view>
@@ -15,17 +15,56 @@
 </template>
 <script setup lang="ts">
 import uuCell from '@/component/common/uu-cell.vue';
-import { ref } from 'vue';
+import { ref,reactive, toRaw } from 'vue';
 
 const title = ref<string>('夜间模式')
-const onSwitch = (e:any) => {
-  if (e.detail.value) {
-    // 选中
-    title.value = '白天模式'
-  }else{
-    // 取消选中
-    title.value = '夜间模式'
+
+const list = reactive([
+  {
+    label:'夜间模式',
+    value:1
+  },
+  {
+    label:'中文',
+    value:2
+  },
+])
+const onSwitch = (e:any,obj:any) => {
+
+  const val= toRaw(obj)
+
+  const changeTheme = () => {
+    if (e.detail.value) {
+      // 选中
+      list[0].label = '白天模式'
+    }else{
+      // 取消选中
+      list[0].label = '夜间模式'
+    }
   }
+  const changeLanguage = () => {
+    if (e.detail.value) {
+      // 选中
+      list[1].label = '英文'
+    }else{
+      // 取消选中
+      list[1].label = '中文'
+    }
+  }
+
+  switch (val.value) {
+    case 1:
+      changeTheme()
+      break;
+    case 2:
+      changeLanguage()
+      break;
+
+    default:
+      break;
+  }
+
+
 
 }
 </script>
