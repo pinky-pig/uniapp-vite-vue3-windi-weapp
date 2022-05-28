@@ -6,7 +6,7 @@
 	</view>
 
 	<!-- 日期 -->
-	<view class=" flex flex-col items-center justify-around my-3 mx-auto rounded-2xl" style="width: 90vw; height: 130px;box-shadow: 0px 10px 40px rgba(29, 22, 23, 0.07);">
+	<view class=" flex flex-col items-center justify-around my-8 mx-auto rounded-2xl" style="width: 90vw; height: 130px;box-shadow: 0px 10px 40px rgba(29, 22, 23, 0.07);">
     <view class="schedule">
 
 		</view>
@@ -16,7 +16,7 @@
 	<!-- 名称和检索 -->
 	<view class=" flex flex-row items-center justify-between px-5 box-border" style="width: 100vw;height: 40px">
 		<view class=" font-bold"> Task Inventory</view>
-		<image style="width: 40px;height: 40px;" src="@/static/images/list/search.svg" ></image>
+		<image style="width: 30px;height: 30px;" class=" text-gray-400" src="@/static/images/list/search.svg" ></image>
 	</view>
 
 	<!-- 列表 -->
@@ -70,6 +70,18 @@ const list = reactive([
   },
   {
     key:'上厕所',
+    value:'',
+  },
+  {
+    key:'烧烤',
+    value:'',
+  },
+	{
+    key:'火锅',
+    value:'',
+  },
+	{
+    key:'大盘鸡',
     value:'',
   },
 ])
