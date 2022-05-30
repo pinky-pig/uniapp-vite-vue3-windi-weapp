@@ -159,7 +159,7 @@ const list = reactive([
 	height:90%;
 	box-sizing: border-box;
 	.title{
-		border-bottom: 1px solid gray;
+		border-bottom: 1px solid #C58BF2;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
