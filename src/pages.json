@@ -98,19 +98,24 @@
       "van-icon": "wxcomponents/@vant/weapp/icon/index",
       "van-search": "wxcomponents/@vant/weapp/search/index",
       "van-calendar": "wxcomponents/@vant/weapp/calendar/index",
+      "van-sticky": "wxcomponents/@vant/weapp/sticky/index",
+      "van-overlay": "wxcomponents/@vant/weapp/overlay/index",
     }
 	},
 	"tabBar": {
     "color": "gray",
     "selectedColor": "#99f",
-    "borderStyle": "black",
+    "borderStyle": "white",
     "backgroundColor": "#ffffff",
+    // #EEA4CE  #ADA4A5 #C58BF2
+
+
     "list": [
       {
         "pagePath": "pages/list/index",
         "iconPath": "static/images/toolbar/home.png",
         "selectedIconPath": "static/images/toolbar/home-on.png",
-        "text": "home"
+        "text": ""
       },
       // {
       //   "pagePath": "pages/index/index",
@@ -120,22 +125,22 @@
       // },
       {
         "pagePath": "pages/map/index",
-        "iconPath": "static/images/toolbar/home.png",
-        "selectedIconPath": "static/images/toolbar/home-on.png",
-        "text": "地图"
+        "iconPath": "static/images/toolbar/category.png",
+        "selectedIconPath": "static/images/toolbar/category-on.png",
+        "text": ""
       },
       {
         "pagePath": "pages/my/index",
         "iconPath": "static/images/toolbar/me.png",
         "selectedIconPath": "static/images/toolbar/me-on.png",
-        "text": "我的"
+        "text": ""
       },
-      {
-        "pagePath": "pages/chat/index",
-        "iconPath": "static/images/toolbar/me.png",
-        "selectedIconPath": "static/images/toolbar/me-on.png",
-        "text": "聊天"
-      },
+      // {
+      //   "pagePath": "pages/chat/index",
+      //   "iconPath": "static/images/toolbar/me.png",
+      //   "selectedIconPath": "static/images/toolbar/me-on.png",
+      //   "text": "聊天"
+      // },
     ]
   }
 }
